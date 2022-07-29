@@ -9,6 +9,8 @@
 
 
 void ex1_21(void);
+void ex1_22(void);
+void ex1_23(void);
 
 struct Sales_data {
   std::string isbn;
@@ -19,7 +21,13 @@ struct Sales_data {
 int main(void)
 {
   // 1.21
-  ex1_21(); 
+  //ex1_21(); 
+
+  // 1.22
+  //ex1_22();
+
+  // 1.23
+  ex1_23();
 
   return 0; 
 }
@@ -40,3 +48,42 @@ void ex1_21(void)
     std::cout << "ISBN different." << std::endl;
   }
 }
+
+void ex1_22(void)
+{
+  // 🫥
+  Sales_data start, curr;
+
+  int s_count = start.count, s_price = start.price;
+  while(std::cin >> start.isbn >> start.count >> start.price) {
+    std::cin >> curr.isbn >> curr.count >> curr.price;
+    if (start.isbn == curr.isbn) {
+      s_count += curr.count;
+      s_price += curr.price;
+    } else {
+      std::cout << curr.isbn << " " << s_count << " " << s_price * s_count << " " << s_price/s_count << std::endl;
+    }
+  }
+  std::cout << curr.isbn << " " << s_count << " " << s_price * s_count << " " << s_price/s_count << std::endl;
+}
+
+void ex1_23(void)
+{
+  Sales_data start, curr;
+  int cnt = 1;
+
+  if (std::cin >> start.isbn) {
+    while (std::cin >> curr.isbn) {
+      if (start.isbn == curr.isbn) {
+        cnt++;
+      } else {
+        std::cout << cnt << std::endl; 
+        cnt = 1;
+        start = curr;
+      }
+    }
+    std::cout << cnt << std::endl; 
+  }
+}
+
+
