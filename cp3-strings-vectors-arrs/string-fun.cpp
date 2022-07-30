@@ -25,7 +25,7 @@ void get_line(void)
 {
   string line;
   while (getline(cin, line))
-    if (!line.empty())
+    if (!line.empty() && line.size() < 80)
       cout << line << endl;
 }
 
