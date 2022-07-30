@@ -1,6 +1,5 @@
 #ifndef SALESDATA_H
 #define SALESDATA_H
-#endif
 
 #include <string>
 
@@ -9,3 +8,4 @@ struct Sales_data {
   int count;
   double price;
 };
+#endif

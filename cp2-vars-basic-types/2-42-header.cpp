@@ -8,7 +8,10 @@ void ex1_23(void);
 int main(void)
 {
 	//ex1_21();
-	ex1_23();
+
+  // test multiple "include"
+  #include "Sales_data.h"
+  ex1_23();
   return 0;
 }
 
