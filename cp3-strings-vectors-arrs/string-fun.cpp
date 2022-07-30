@@ -25,6 +25,7 @@ void get_line(void)
 {
   string line;
   while (getline(cin, line))
-    cout << line << endl;
+    if (!line.empty())
+      cout << line << endl;
 }
 
