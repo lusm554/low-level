@@ -6,11 +6,13 @@ using std::string;
 
 void ex2();
 void ex4();
+void ex5();
 
 int main(void)
 {
   //ex2();
-  ex4();
+  //ex4();
+  ex5();
   return 0;
 }
 
@@ -48,3 +50,22 @@ void ex4()
   else // if not equal len check which str longer
     cout << (str1.size() > str2.size() ? str1 : str2) << endl;
 }
+
+void ex5()
+{
+  string curr;
+  string sum;
+
+  /*
+  // first version
+  while (cin >> curr)
+    sum += curr;
+  cout << sum << endl;
+  */
+
+  // second version 
+  while (cin >> curr)
+    sum += curr + ' ';
+  cout << sum << endl;
+}
+
