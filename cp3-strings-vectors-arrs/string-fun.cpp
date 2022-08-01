@@ -6,11 +6,13 @@ using std::cout; using std::cin; using std::endl;
 
 void read_words(void);
 void get_line(void);
+void basic_iterate_str(void);
 
 int main(void)
 {
   //read_words();
-  get_line();
+  //get_line();
+  basic_iterate_str();
   return 0;
 }
 
@@ -29,3 +31,19 @@ void get_line(void)
       cout << line << endl;
 }
 
+void basic_iterate_str(void)
+{
+  string str = "some string";
+
+  for (auto c : str)
+    cout << c << endl;
+
+
+  string check_punc = "Hello, World!!";
+  decltype(check_punc.size()) cnt = 0; 
+
+  for (auto c : check_punc)
+    if (std::ispunct(c))
+      cnt++;
+  cout << cnt << " punctuation chars in " << check_punc << endl; 
+}
