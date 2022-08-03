@@ -7,6 +7,7 @@ using std::cout; using std::cin; using std::endl;
 void read_words(void);
 void get_line(void);
 void basic_iterate_str(void);
+void change_str(void);
 
 int main(void)
 {
@@ -47,3 +48,9 @@ void basic_iterate_str(void)
       cnt++;
   cout << cnt << " punctuation chars in " << check_punc << endl; 
 }
+
+void change_str(void)
+{
+
+}
+
