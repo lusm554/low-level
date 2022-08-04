@@ -13,7 +13,8 @@ int main(void)
 {
   //read_words();
   //get_line();
-  basic_iterate_str();
+  //basic_iterate_str();
+  change_str();
   return 0;
 }
 
@@ -51,6 +52,11 @@ void basic_iterate_str(void)
 
 void change_str(void)
 {
+  string str = "Hello World!";
 
+  for (auto &c : str)
+    c = std::toupper(c);
+
+  cout << str << endl;
 }
 
