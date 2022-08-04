@@ -58,5 +58,11 @@ void change_str(void)
     c = std::toupper(c);
 
   cout << str << endl;
+
+  string s = "some string";
+  if (!s.empty())
+    s[0] = std::toupper(s[0]);
+
+  cout << s << endl;
 }
 
