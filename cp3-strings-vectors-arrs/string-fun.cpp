@@ -52,17 +52,27 @@ void basic_iterate_str(void)
 
 void change_str(void)
 {
+  // to upper
   string str = "Hello World!";
-
   for (auto &c : str)
     c = std::toupper(c);
 
   cout << str << endl;
 
+  // first char to upper
   string s = "some string";
   if (!s.empty())
     s[0] = std::toupper(s[0]);
 
   cout << s << endl;
+
+  // first word to upper
+  string words = "how are you?";
+  for (decltype(words.size()) i = 0; i != words.size() && !isspace(words[i]); ++i) {
+    words[i] = toupper(words[i]);
+  }
+
+  cout << words << endl;
+
 }
 
