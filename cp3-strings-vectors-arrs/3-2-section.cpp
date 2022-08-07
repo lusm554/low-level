@@ -6,11 +6,13 @@ using std::string;
 
 void ex3_6();
 void ex3_8();
+void ex3_10();
 
 int main()
 {
   //ex3_6();
-  ex3_8();
+  //ex3_8();
+  ex3_10();
   return 0;
 }
 
@@ -37,4 +39,15 @@ void ex3_8()
     fstr[i] = 'X';
 
   cout << fstr << endl; 
+}
+
+void ex3_10()
+{
+  string line;
+  if(getline(cin, line)) {
+    for (auto c : line)
+      if (!std::ispunct(c))
+        cout << c;
+  }
+  cout << endl;
 }
