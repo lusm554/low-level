@@ -74,5 +74,16 @@ void change_str(void)
 
   cout << words << endl;
 
+  const string hexdigits= "0123456789ABCDEF";
+  cout << "Enter series of numbers between 0 and 15"
+          " separated by spaces. Hit enter at finish: "
+  << endl;
+
+  string res; // will hold the result
+  string::size_type n; // hold number from the input
+  while (cin >> n)
+    if (n < hexdigits.size())
+      res += hexdigits[n];
+  cout << res << endl;
 }
 
