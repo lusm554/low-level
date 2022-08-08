@@ -9,12 +9,14 @@ void read_seq();
 void check_size();
 void read_seq_word();
 void three_ways_define_vector();
+void set_of_ints();
 
 int main()
 {
   //check_size();
   //read_seq_word();
-  three_ways_define_vector();
+  //three_ways_define_vector();
+  set_of_ints();
   return 0;
 }
 
@@ -93,4 +95,24 @@ void three_ways_define_vector()
   cout << w1.size() << " " << w2.size() << " " << w3.size() << endl; // 10 10 10 
 }
 
+void set_of_ints()
+{
+  int num;
+  vector<int> nums;
+  while (cin >> num)
+    nums.push_back(num); 
 
+  // sum of pairs..
+  /*
+  for (auto i : nums) {
+    for (auto j : nums) {
+      cout << "i: " << i << " j: " << j << " " << i + j << endl;
+    }
+  }
+  */
+
+  for (decltype(nums.size()) i = 0; i < nums.size()/2; i++) {
+    int lasti = nums.size()-i-1;
+    cout << nums[i] + nums[lasti] << endl;
+  }
+}
