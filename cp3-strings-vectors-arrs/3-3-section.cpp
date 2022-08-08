@@ -1,15 +1,18 @@
 #include <iostream>
 #include <vector>
+#include <cctype>
 
 using std::cout; using std::cin; using std::endl;
 using std::vector; using std::string;
 
 void read_seq();
 void check_size();
+void read_seq_word();
 
 int main()
 {
-  check_size();
+  //check_size();
+  read_seq_word();
 
   return 0;
 }
@@ -52,3 +55,23 @@ void check_size()
   cout << v7.size() << endl;
 }
 
+void read_seq_word()
+{
+  string word;
+  vector<string> text;
+  while (cin >> word)
+    text.push_back(word);
+  
+  int i = 0;
+  for (auto word : text) {
+    i++;
+    for (auto &c : word) c = std::toupper(c);
+    cout << word << " ";
+
+    if (i == 8) {
+      i = 0;
+      cout << endl;
+    }
+  } 
+  cout << endl;
+}
