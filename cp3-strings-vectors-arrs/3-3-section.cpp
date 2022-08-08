@@ -8,12 +8,13 @@ using std::vector; using std::string;
 void read_seq();
 void check_size();
 void read_seq_word();
+void three_ways_define_vector();
 
 int main()
 {
   //check_size();
-  read_seq_word();
-
+  //read_seq_word();
+  three_ways_define_vector();
   return 0;
 }
 
@@ -75,3 +76,21 @@ void read_seq_word()
   } 
   cout << endl;
 }
+
+void three_ways_define_vector()
+{
+  // 1
+  vector<int> w1 = {42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+
+  // 2, the best one i think
+  vector<int> w2(10, 42);
+
+  // 3
+  vector<int> w3;
+  for (int i = 0; i < 10; i++)
+    w3.push_back(42);
+
+  cout << w1.size() << " " << w2.size() << " " << w3.size() << endl; // 10 10 10 
+}
+
+
