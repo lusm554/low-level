@@ -4,13 +4,15 @@
 
 void capitalized();
 void upper();
+void until_empty();
 
 using namespace std;
 
 int main()
 {
   //capitalized();
-  upper();
+  //upper();
+  until_empty();
   return 0;
 }
 
@@ -37,3 +39,13 @@ void upper()
   cout << s << endl;
 }
 
+void until_empty()
+{
+  string curr_word;
+  vector<string> text;
+  while (cin >> curr_word)
+    text.push_back(curr_word);
+
+  for (auto it = text.cbegin(); it != text.cend() && !it->empty(); it++)
+    cout << *it << endl;
+}
