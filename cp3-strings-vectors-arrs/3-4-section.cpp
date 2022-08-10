@@ -7,12 +7,14 @@ using namespace std;
 void upper();
 void ten_it();
 void it_set();
+void it_cluster();
 
 int main()
 {
   //upper();
   //ten_it();
-  it_set();
+  //it_set();
+  it_cluster();
   return 0;
 }
 
@@ -66,5 +68,18 @@ void it_set()
 
 void it_cluster()
 {
+  vector<unsigned> scores(11, 0);  
+  unsigned grade;
+
+  auto it = scores.begin();
   
+  while (cin >> grade) {
+    if (grade <= 100)
+      //++scores[grade/10];
+      ++(*(it + grade/10));
+  }
+
+  for (int i = 0; i < scores.size(); i++) {
+    cout << i << " " << scores[i] << endl;
+  }
 }
