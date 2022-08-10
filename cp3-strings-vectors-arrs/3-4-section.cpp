@@ -6,11 +6,13 @@ using namespace std;
 
 void upper();
 void ten_it();
+void it_set();
 
 int main()
 {
   //upper();
-  ten_it();
+  //ten_it();
+  it_set();
   return 0;
 }
 
@@ -41,3 +43,28 @@ void ten_it()
   }
 }
 
+/* 
+Read a set of integers into a vector. Print the sum of each pair of adjacent elements. Change your program so that it prints the sum of the first and last elements, followed by the sum of the second and second-to-last, and so on.
+*/
+
+void it_set()
+{
+  int in;
+  vector<int> set;
+  while (cin >> in)
+    set.push_back(in);
+
+  /*
+  for (auto iti = set.cbegin(); iti != set.cend(); iti++)
+    for (auto itj = set.cbegin(); itj != set.cend(); itj++)
+      cout << *iti * *itj << endl;
+  */
+  
+  for (auto it = set.cbegin(), end = --set.cend(); it != (set.begin() + set.size() / 2); it++, end--)
+    cout << *it << " " << *end << " " << *it + *end << endl;
+}
+
+void it_cluster()
+{
+  
+}
