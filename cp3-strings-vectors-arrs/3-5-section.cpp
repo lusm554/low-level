@@ -99,6 +99,31 @@ void comp_strs()
   else
     cout << "string not equal" << endl;
 
+  char cs1[] = "hello";
+  char cs2[] = "nello";
 
+  if (sizeof(cs2)/sizeof(char) != sizeof(cs1)/sizeof(char)) {
+    cout << "not equal" << endl;
+    return;
+  }
+
+  char *sp1 = cs1;
+  char *sp2 = cs2;
+  
+  while (*sp1 && *sp2) {
+    if (*sp1 != *sp2) {
+      cout << "not equal" << endl;
+      break;
+    }
+    sp1++; 
+    sp2++; 
+  }
+  //cout << "strings equal" << endl;
+
+  // or just...
+  if (strcmp(cs1, cs2) == 0)
+    cout << "equal through strcmp" << endl;
+  else
+    cout << "not equal through strcmp" << endl;
 }
 
