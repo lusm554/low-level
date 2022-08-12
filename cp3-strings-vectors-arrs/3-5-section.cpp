@@ -9,6 +9,7 @@ void same_w_vec();
 void elems2zero();
 void iseq();
 void comp_strs();
+void concat_chars();
 
 int main()
 {
@@ -16,7 +17,8 @@ int main()
   //same_w_vec();
   //elems2zero();
   //iseq();
-  comp_strs();
+  //comp_strs();
+  concat_chars();
   return 0;
 }
 
@@ -125,5 +127,15 @@ void comp_strs()
     cout << "equal through strcmp" << endl;
   else
     cout << "not equal through strcmp" << endl;
+}
+
+void concat_chars()
+{
+  char ar1[] = {'h', 'i', '\0'};
+  char ar2[] = {'!', '\0'};
+  char ar3[4]; // 2 + 1 + 1
+  
+  strcpy(ar3, std::strcat(ar1, ar2));
+  cout << ar3 << endl;
 }
 
