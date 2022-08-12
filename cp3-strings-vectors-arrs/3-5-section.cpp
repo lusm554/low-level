@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -7,13 +8,15 @@ void define_arr();
 void same_w_vec();
 void elems2zero();
 void iseq();
+void comp_strs();
 
 int main()
 {
   //define_arr();
   //same_w_vec();
   //elems2zero();
-  iseq();
+  //iseq();
+  comp_strs();
   return 0;
 }
 
@@ -84,5 +87,18 @@ void iseq()
     }
   }
   cout << "equal" << endl;
+}
+
+void comp_strs()
+{
+  string s1 = "hello";
+  string s2 = "hello";
+  
+  if (s1 == s2)
+   cout << "strings equal" << endl; 
+  else
+    cout << "string not equal" << endl;
+
+
 }
 
