@@ -6,12 +6,14 @@ using namespace std;
 void define_arr();
 void same_w_vec();
 void elems2zero();
+void iseq();
 
 int main()
 {
   //define_arr();
   //same_w_vec();
-  elems2zero();
+  //elems2zero();
+  iseq();
   return 0;
 }
 
@@ -43,3 +45,24 @@ void elems2zero()
   for (auto i : arr)
     cout << i << endl;
 }
+
+void iseq()
+{
+  int arr1[5] = {1, 2, 3, 4, 5};
+  int arr2[] = {1, 2, 3, 4, 4};
+
+  cout << sizeof(arr1)/sizeof(int) << endl;
+  cout << sizeof(arr2)/sizeof(int) << endl;
+  if (sizeof(arr2)/sizeof(int) != sizeof(arr1)/sizeof(int)) {
+    cout << "not equal" << endl;
+    return;
+  }
+  for (int i = 0; i < sizeof(arr1)/sizeof(int); i++) {
+    if (arr1[i] != arr2[i]) {
+      cout << "not equal" << endl;
+      return;
+    }
+  }
+  cout << "equal" << endl;
+}
+
