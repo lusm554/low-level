@@ -10,6 +10,7 @@ void elems2zero();
 void iseq();
 void comp_strs();
 void concat_chars();
+void vec_from_arr();
 
 int main()
 {
@@ -18,7 +19,8 @@ int main()
   //elems2zero();
   //iseq();
   //comp_strs();
-  concat_chars();
+  //concat_chars();
+  vec_from_arr();
   return 0;
 }
 
@@ -137,5 +139,15 @@ void concat_chars()
   
   strcpy(ar3, std::strcat(ar1, ar2));
   cout << ar3 << endl;
+}
+
+void vec_from_arr()
+{
+  int arr[] = {1, 2, 3, 4, 5};
+  vector<int> vec(begin(arr), end(arr));
+
+  for (auto it = vec.cbegin(); it != vec.cend(); it++)
+    cout << *it << endl;
+
 }
 
