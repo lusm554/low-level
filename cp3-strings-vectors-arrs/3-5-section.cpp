@@ -147,7 +147,16 @@ void vec_from_arr()
   vector<int> vec(begin(arr), end(arr));
 
   for (auto it = vec.cbegin(); it != vec.cend(); it++)
-    cout << *it << endl;
+    cout << *it << " ";
+  cout << endl;
 
+  int arr2[5];
+  int i = 0;
+  for (auto it = vec.cbegin(); it != vec.cend(); it++)
+    arr2[i++] = *it;
+
+  for (int i = 0; i < 5; i++)
+    cout << arr2[i] << endl;
 }
+
 
