@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 
 using namespace std;
 
@@ -16,7 +17,10 @@ int main()
   int ival = 11;
   bool iseven = ival % 2 == 0;
   cout << (iseven ? "even" : "odd") << endl;
+
+  // 4.7
+  short short_int = numeric_limits<short>::max(); // 32767 
+  cout << ++short_int << endl;
+
   return 0;
-
-
 }
