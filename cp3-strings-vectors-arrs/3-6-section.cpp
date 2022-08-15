@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <typeinfo>
 
 using namespace std;
 
@@ -40,6 +41,12 @@ void dif_2dim_vec()
     cout << endl;
   }
 
-
+  // using pointers
+  for (int (*p1)[4] = ia; p1 != ia+3; p1++) {
+    for (int *p2 = *p1; p2 != *p1+4; p2++) {
+      cout << *p2 << " ";
+    }
+    cout << endl;
+  }
 }
 
