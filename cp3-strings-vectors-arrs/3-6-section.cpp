@@ -24,12 +24,22 @@ void dif_2dim_vec()
     {8, 9, 10, 11}
   };
 
+  // range for
   for (int (&r1)[4] : ia) {
     for (int (&r2) : r1) {
       cout << r2 << " ";
     }
     cout << endl;
   }
+
+  // using subscripts
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 4; j++) {
+      cout << ia[i][j] << " ";
+    }
+    cout << endl;
+  }
+
 
 }
 
