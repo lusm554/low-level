@@ -4,6 +4,8 @@
 
 using namespace std;
 
+void wh_con();
+
 int main()
 {
 
@@ -19,6 +21,16 @@ int main()
   const char *cp = "";
   if (cp && *cp) // if pointer is good and *cp is not empty string
     cout << cp << endl;
+
+  // 4.10
+  wh_con();
+
+  return 0;
 }
 
-
+void wh_con()
+{
+  int in;
+  while (cin >> in && in != 42)
+    cout << "not 42 or EOF(((" << endl;
+}
