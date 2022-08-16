@@ -27,7 +27,17 @@ int main()
   //wh_con();
 
   // 4.11
-  which_greater();
+  //which_greater();
+
+  // 4.12
+  // i != j < k means that i != j returns bool value that compared with k, hence k compared with 1/0.
+  int i = 1, j = 11, k = 10;
+
+  if (i != j && j < k)
+    cout << "should not appear" << endl;
+
+  if (i != j < k) // because i != j returns bool, which cast to 1
+    cout << "should not appear" << endl;
 
   return 0;
 }
