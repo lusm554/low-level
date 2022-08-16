@@ -5,6 +5,7 @@
 using namespace std;
 
 void wh_con();
+void which_greater();
 
 int main()
 {
@@ -23,7 +24,10 @@ int main()
     cout << cp << endl;
 
   // 4.10
-  wh_con();
+  //wh_con();
+
+  // 4.11
+  which_greater();
 
   return 0;
 }
@@ -34,3 +38,12 @@ void wh_con()
   while (cin >> in && in != 42)
     cout << "not 42 or EOF(((" << endl;
 }
+
+void which_greater()
+{
+  int d = 1, c = 2, b = 3, a = 4;
+
+  if (a > b && b > c && c > d)
+    cout << "bruh" << endl;
+}
+
