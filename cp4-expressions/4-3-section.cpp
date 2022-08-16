@@ -15,7 +15,10 @@ int main()
   // The best way ==> con1 > con2 && con2 > con3.
   // val == true, bool 'true' cast to the same value as 'val'. So if val is int, then val == 1.
   
-
+  // 4.9
+  const char *cp = "";
+  if (cp && *cp) // if pointer is good and *cp is not empty string
+    cout << cp << endl;
 }
 
 
