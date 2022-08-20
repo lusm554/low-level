@@ -4,10 +4,12 @@
 using namespace std;
 
 void ter_cond();
+void pass();
 
 int main()
 {
-  ter_cond();
+  //ter_cond();
+  pass();
 
   return 0;
 }
@@ -22,5 +24,33 @@ void ter_cond()
 
   for (int &val : vec)
     cout << val << endl;
+}
+
+void pass()
+{
+  int grade = 76;
+
+  /*
+  string finalgrade = (grade > 90) ? "high pass"
+                      : (grade < 60) ? "fail" : "pass";
+  */
+
+  string finalgrade = (grade > 90) ? "high pass" : (grade > 60 && grade <= 75) ? "low pass" : (grade < 60) ? "fail" : "pass";
+
+  cout << finalgrade << endl;
+
+
+  string f;
+  if (grade > 90)
+    f = "high pass";
+  else if (grade > 60 && grade <= 75)
+    f = "low pass";
+  else if (grade < 60)
+    f = "fail";
+  else
+    f = "pass";
+
+  cout << f << endl;
+  // don't look at that logic...
 }
 
