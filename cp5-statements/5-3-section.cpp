@@ -6,11 +6,13 @@ using namespace std;
 
 void letter_grade();
 void letter_grade_ter();
+void correct();
 
 int main()
 {
   //letter_grade();
-  letter_grade_ter();
+  //letter_grade_ter();
+  correct();
 
   return 0;
 }
@@ -44,3 +46,38 @@ void letter_grade_ter()
 
   cout << lettergrade << endl;
 }
+
+void correct()
+{
+  // a
+  /*
+  if (val != val2)
+    val = val2;
+  else
+    val = val2 = 0;
+  */
+
+  // b
+  /*
+  if (val < minval) {
+    minval = val;
+    occurs += 1;
+  }
+  */
+
+  // c
+  /*
+  int val;
+  if (val = get_value())
+    cout << ... << endl;
+  if (!val)
+    cout << ...;
+  */
+
+  // d
+  /*
+  if (val == 0)
+    val = get_value(); 
+  */
+}
+
