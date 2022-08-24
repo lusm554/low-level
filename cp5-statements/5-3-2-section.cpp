@@ -16,7 +16,10 @@ int main()
 
 void count_vowels()
 {
+  // vowels
   int aCnt = 0, eCnt = 0, iCnt = 0, oCnt = 0, uCnt = 0;
+  // blank spaces, tabls, newlines
+  int spacesCnt = 0, tabsCnt = 0, nlCnt = 0; 
   char ch;
 
   while (cin >> ch) {
@@ -41,6 +44,15 @@ void count_vowels()
       case 'u':
         ++uCnt;
         break;
+      case ' ':
+        ++spacesCnt;
+        break;
+      case '\t':
+        ++tabsCnt;
+        break;
+      case '\n':
+        ++nlCnt;
+        break;
       default:
         break;
     }
@@ -50,6 +62,9 @@ void count_vowels()
        << "Count of eE: \t" << eCnt << '\n'
        << "Count of iI: \t" << iCnt << '\n'
        << "Count of oO: \t" << oCnt << '\n'
-       << "Count of uU: \t" << uCnt << endl;
+       << "Count of uU: \t" << uCnt << '\n'
+       << "Count of tabls: \t" << tabsCnt << '\n'
+       << "Count of new lines: \t" << nlCnt << '\n'
+       << "Count of blank spaces: \t" << spacesCnt << endl;
 }
 
