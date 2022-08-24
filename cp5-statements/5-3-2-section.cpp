@@ -21,18 +21,23 @@ void count_vowels()
 
   while (cin >> ch) {
     switch (ch) {
+      case 'A':
       case 'a':
         ++aCnt;
         break;
+      case 'E':
       case 'e':
         ++eCnt;
         break;
+      case 'I':
       case 'i':
         ++iCnt;
         break;
+      case 'O':
       case 'o':
         ++oCnt;
         break;
+      case 'U':
       case 'u':
         ++uCnt;
         break;
@@ -41,10 +46,10 @@ void count_vowels()
     }
   }
 
-  cout << "Count of a: \t" << aCnt << '\n'
-       << "Count of e: \t" << eCnt << '\n'
-       << "Count of i: \t" << iCnt << '\n'
-       << "Count of o: \t" << oCnt << '\n'
-       << "Count of u: \t" << uCnt << endl;
+  cout << "Count of aA: \t" << aCnt << '\n'
+       << "Count of eE: \t" << eCnt << '\n'
+       << "Count of iI: \t" << iCnt << '\n'
+       << "Count of oO: \t" << oCnt << '\n'
+       << "Count of uU: \t" << uCnt << endl;
 }
 
