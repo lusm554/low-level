@@ -12,7 +12,7 @@ int main()
 {
   //letter_grade();
   //letter_grade_ter();
-  correct();
+  //correct();
 
   return 0;
 }
