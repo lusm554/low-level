@@ -5,10 +5,12 @@
 using namespace std;
 
 void count_vowels();
+void count_occurs();
 
 int main()
 {
-  count_vowels();
+  //count_vowels();
+  count_occurs();
 
   return 0;
 }
@@ -68,3 +70,35 @@ void count_vowels()
        << "Count of blank spaces: \t" << spacesCnt << endl;
 }
 
+void count_occurs()
+{
+  int ffCnt = 0, flCnt = 0, fiCnt = 0;
+  char ch, prevch = '\0';
+  
+  while (cin >> ch) {
+    switch (ch) {
+      case 'i':
+        if (prevch == 'f') {
+          ++fiCnt;
+        }
+        break;
+      case 'f':
+        if (prevch == 'f') {
+          ++ffCnt;
+        }
+        break;
+      case 'l':
+        if (prevch == 'f') {
+          ++flCnt;
+        }
+        break;
+      default:
+        break;
+    }
+    prevch = ch;
+  }
+
+  cout << "Count of ff: \t" << ffCnt << '\n'
+       << "Count of fl: \t" << flCnt << '\n'
+       << "Count of fi: \t" << fiCnt << endl;
+}
