@@ -16,24 +16,25 @@ int main()
 
 void read_str()
 {
-  string str, prev;
-  string most_repeated;
-  int occur_cnt = 0, max_repeated = 0;
+  string in, prev_in, max_repeat_in;
+  int repeat_cnt = 0, max_repeat_cnt = 0;
 
-  while (cin >> str) {
-    if (str == prev) {
-      ++occur_cnt;
-      if (occur_cnt > max_repeated) {
-        max_repeated = occur_cnt; 
-        most_repeated = str;
-      }
+  while (cin >> in) {
+    if (in == prev_in) {
+      ++repeat_cnt;
+    } else {
+      repeat_cnt = 1;
+      prev_in = in;
     }
 
-    prev = str;
+    if (max_repeat_cnt < repeat_cnt) {
+      max_repeat_cnt = repeat_cnt;
+      max_repeat_in = prev_in;
+    }
   }
 
-  if (max_repeated)
-    cout << most_repeated << " occured " << max_repeated << " times." << endl;
+  if (max_repeat_cnt <= 1)
+    cout << "no words repeated." << endl;
   else
-    cout << "no word repeated" << endl;
+    cout << max_repeat_in << " occured " << max_repeat_cnt << " times." << endl;
 }
