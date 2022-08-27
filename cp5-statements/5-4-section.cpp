@@ -72,6 +72,8 @@ void check_prefix()
 
 void str2()
 {
+  // v1
+  /*
   string s1, s2;
 
   do {
@@ -83,5 +85,17 @@ void str2()
         cout << s2 << " less than " << s1 << endl;
     }
   } while (s1.size() && s2.size());
+  */
+
+  // v2
+  string s1, s2, iscon;
+  do 
+  {
+    cout << "Input 2 strings: ";
+    cin >> s1 >> s2;
+    cout << (s1 >= s2 ? s2 : s1) << " is smaller" << endl;
+    cout << "Continue(y/n): ";
+    cin >> iscon;
+  } while (iscon == "y");
 }
 
