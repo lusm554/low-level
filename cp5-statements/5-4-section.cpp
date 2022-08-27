@@ -5,10 +5,13 @@
 using namespace std;
 
 void read_str();
+void check_prefix();
+
 
 int main()
 {
-  read_str();
+  //read_str();
+  check_prefix();
 
   return 0;
 }
@@ -38,3 +41,31 @@ void read_str()
   else
     cout << max_repeat_in << " occured " << max_repeat_cnt << " times." << endl;
 }
+
+void check_prefix()
+{
+  vector<int> vi1, vi2;
+  bool ispref = true;
+
+  vi1 = {1, 2, 2, 2};
+  vi2 = {1, 2, 3};
+  
+  if (vi2.size() < vi1.size()) {
+    vector<int> temp = vi2;
+    vi2 = vi1;
+    vi1 = temp;
+  }
+
+  // check that vi1 is pref of vi2
+  for (int i = 0; i < vi1.size(); i++)
+  {
+    if (!(vi2.size() > i && vi1[i] == vi2[i]))
+    {
+      ispref = false;
+      cout << "not prefix" << endl;
+    }
+  }
+  if (ispref)
+    cout << "prefix" << endl;
+}
+
