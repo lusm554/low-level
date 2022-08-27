@@ -6,12 +6,13 @@ using namespace std;
 
 void read_str();
 void check_prefix();
-
+void str2();
 
 int main()
 {
   //read_str();
-  check_prefix();
+  //check_prefix();
+  str2();
 
   return 0;
 }
@@ -67,5 +68,20 @@ void check_prefix()
   }
   if (ispref)
     cout << "prefix" << endl;
+}
+
+void str2()
+{
+  string s1, s2;
+
+  do {
+    if (cin >> s1 >> s2)
+    {
+      if (s1 < s2)
+        cout << s1 << " less than " << s2 << endl;
+      else
+        cout << s2 << " less than " << s1 << endl;
+    }
+  } while (s1.size() && s2.size());
 }
 
