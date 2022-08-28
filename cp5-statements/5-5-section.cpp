@@ -6,11 +6,13 @@ using namespace std;
 
 void check_in();
 void check_in_cont();
+void eliminate_goto();
 
 int main()
 {
   //check_in();
-  check_in_cont();
+  //check_in_cont();
+  eliminate_goto();
 
   return 0;
 }
@@ -53,4 +55,21 @@ void check_in_cont()
   if (!isrepeated)
     cout << "No word repeated." << endl;
 }
+
+void eliminate_goto()
+{
+  begin:
+    int goto_in;
+    cin >> goto_in;
+    if (goto_in <= 0)
+      goto begin;
+
+  // the same with loop
+  int in;
+  while (cin >> in) {
+    if (in > 0)
+      break;
+  }
+}
+
 
