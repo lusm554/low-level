@@ -7,11 +7,17 @@ int get_fact(void);
 
 int main()
 {
+  /*
   int fact5 = fact(5);
   cout << fact5 << endl;
 
   int fact = get_fact();
   cout << fact << endl;
+  */
+
+  int test_abs;
+  if (cin >> test_abs)
+    cout << abs(test_abs) << endl;
 }
 
 int fact(int val)
@@ -35,3 +41,9 @@ int get_fact(void)
 
   return res;
 }
+
+int abs(int val)
+{
+  return val < 0 ? (-val) : val;
+}
+
