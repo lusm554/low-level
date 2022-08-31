@@ -1,10 +1,14 @@
 #include <iostream>
+#include "Chapter6.h"
 
 using namespace std;
 
+// Declared in Chapter6.h
+/*
 int fact(int val);
 int get_fact(void);
 int cnt_calls();
+*/
 
 int main()
 {
