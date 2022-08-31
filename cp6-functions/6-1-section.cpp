@@ -4,6 +4,7 @@ using namespace std;
 
 int fact(int val);
 int get_fact(void);
+int cnt_calls();
 
 int main()
 {
@@ -13,11 +14,15 @@ int main()
 
   int fact = get_fact();
   cout << fact << endl;
-  */
 
   int test_abs;
   if (cin >> test_abs)
     cout << abs(test_abs) << endl;
+  */
+
+  for (int i = 0; i < 5; i++)
+    cout << cnt_calls() << endl;
+
 }
 
 int fact(int val)
@@ -46,4 +51,11 @@ int abs(int val)
 {
   return val < 0 ? (-val) : val;
 }
+
+int cnt_calls()
+{
+  static size_t cnt = 0;
+  return cnt++;
+}
+
 
