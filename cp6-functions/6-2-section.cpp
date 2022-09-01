@@ -6,6 +6,7 @@ using namespace std;
 void swap(int *a, int *b);
 string::size_type find_char(const string &s, char c, string::size_type &cnt);
 void swap_ref(int &a, int &b);
+bool anyCapital(const string &s);
 
 int main()
 {
@@ -26,10 +27,18 @@ int main()
   cout << "First occurenc at " << index << " index" << endl;
   */
 
+  /*
   int a = 101, b = 202;
   cout << "a=" << a << " b=" << b << endl;
   swap_ref(a, b);
   cout << "a=" << a << " b=" << b << endl;
+  */
+
+  string wcap = "hello";
+  string wocap = "Hello";
+
+  cout << anyCapital(wcap) << endl;
+  cout << anyCapital(wocap) << endl;
 
   return 0;
 }
@@ -60,6 +69,14 @@ string::size_type find_char(const string &s, char c, string::size_type &cnt)
     ++cnt;
   }
   return ret;
+}
+
+bool anyCapital(const string &s)
+{
+  for (auto beg = s.begin(); beg != s.end(); beg++)
+    if (isupper(*beg))
+      return true;
+  return false;
 }
 
 
