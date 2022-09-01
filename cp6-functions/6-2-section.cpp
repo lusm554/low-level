@@ -28,7 +28,7 @@ int main()
 
   int a = 101, b = 202;
   cout << "a=" << a << " b=" << b << endl;
-  swap(a, b);
+  swap_ref(a, b);
   cout << "a=" << a << " b=" << b << endl;
 
   return 0;
