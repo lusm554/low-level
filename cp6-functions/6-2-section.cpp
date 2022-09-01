@@ -5,6 +5,7 @@ using namespace std;
 
 void swap(int *a, int *b);
 string::size_type find_char(const string &s, char c, string::size_type &cnt);
+void swap_ref(int &a, int &b);
 
 int main()
 {
@@ -15,6 +16,7 @@ int main()
   cout << "a=" << a << " b=" << b << endl;
   */
 
+  /*
   string s = "hello world";
   char c = 'l';
   string::size_type cnt;
@@ -22,6 +24,12 @@ int main()
   auto index = find_char(s, c, cnt);
   cout << "Count of " << c << " in " << s << endl;
   cout << "First occurenc at " << index << " index" << endl;
+  */
+
+  int a = 101, b = 202;
+  cout << "a=" << a << " b=" << b << endl;
+  swap(a, b);
+  cout << "a=" << a << " b=" << b << endl;
 
   return 0;
 }
@@ -32,6 +40,13 @@ void swap(int *a, int *b)
   int temp = *a;
   *a = *b;
   *b = temp;
+}
+
+void swap_ref(int &a, int &b)
+{
+  int temp = a;
+  a = b;
+  b = temp;
 }
 
 string::size_type find_char(const string &s, char c, string::size_type &cnt)
