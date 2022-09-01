@@ -7,6 +7,7 @@ void swap(int *a, int *b);
 string::size_type find_char(const string &s, char c, string::size_type &cnt);
 void swap_ref(int &a, int &b);
 bool anyCapital(const string &s);
+void stolower(string &s);
 
 int main()
 {
@@ -34,11 +35,17 @@ int main()
   cout << "a=" << a << " b=" << b << endl;
   */
 
+  /*
   string wcap = "hello";
   string wocap = "Hello";
 
   cout << anyCapital(wcap) << endl;
   cout << anyCapital(wocap) << endl;
+  */
+
+  string s = "HELLO";
+  stolower(s);
+  cout << s << endl;
 
   return 0;
 }
@@ -77,6 +84,12 @@ bool anyCapital(const string &s)
     if (isupper(*beg))
       return true;
   return false;
+}
+
+void stolower(string &s)
+{
+  for (auto &c : s)
+    c = tolower(c);
 }
 
 
