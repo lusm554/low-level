@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -8,6 +9,12 @@ string::size_type find_char(const string &s, char c, string::size_type &cnt);
 void swap_ref(int &a, int &b);
 bool anyCapital(const string &s);
 void stolower(string &s);
+
+//6.18 declarations
+class matrix { /* details */ };
+
+bool compare(matrix &a, matrix &b);
+vector<int> change_val(int a, vector<int>::iterator iter);
 
 int main()
 {
