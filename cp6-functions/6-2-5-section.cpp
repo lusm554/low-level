@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 int sum_lst(initializer_list<int> lst)
 {
   int sum = 0;
-  for (auto i : lst)
+  for (int i : lst)
     sum += i;
   
   return sum;
