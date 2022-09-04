@@ -9,6 +9,7 @@ string::size_type find_char(const string &s, char c, string::size_type &cnt);
 void swap_ref(int &a, int &b);
 bool anyCapital(const string &s);
 void stolower(string &s);
+int get_max(int a, int* b);
 
 //6.18 declarations
 class matrix { /* details */ };
@@ -50,13 +51,22 @@ int main()
   cout << anyCapital(wocap) << endl;
   */
 
+  /*
   string s = "HELLO";
   stolower(s);
   cout << s << endl;
+  */
+
+  int a = 0, b = 1, *bp = &b;
+  cout << get_max(a, bp) << endl;
 
   return 0;
 }
 
+int get_max(int a, int* b)
+{
+  return a > *b ? a : *b;
+}
 
 void swap(int *a, int *b)
 {
