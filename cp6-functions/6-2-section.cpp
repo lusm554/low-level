@@ -10,6 +10,11 @@ void swap_ref(int &a, int &b);
 bool anyCapital(const string &s);
 void stolower(string &s);
 int get_max(int a, int* b);
+void print(const int *p);
+void print2(const char *p);
+void print3(const int *beg, const int *end);
+void print4(const int ai[], size_t size);
+void print5(int (&arr)[2]);
 
 //6.18 declarations
 class matrix { /* details */ };
@@ -57,10 +62,48 @@ int main()
   cout << s << endl;
   */
 
+  /*
   int a = 0, b = 1, *bp = &b;
   cout << get_max(a, bp) << endl;
+  */
+
+  int i = 0, j[2] = { 1, 2 };
+
+  print(&i);
+  print3(begin(j), end(j));
+  print4(j, end(j)-begin(j));
+  print5(j);
 
   return 0;
+}
+
+void print(const int *p) {
+  if (p)
+    cout << *p << endl;
+}
+
+void print2(const char *p) {
+  if (p) {
+    while (*p)
+      cout << *p++;
+    cout << endl;
+  }
+}
+
+void print3(const int *beg, const int *end) {
+  while (beg != end) {
+    cout << *beg++ << endl;
+  }
+}
+
+void print4(const int ai[], size_t size) {
+  for (size_t i = 0; i < size; i++)
+    cout << ai[i] << endl;
+}
+
+void print5(int (&arr)[2]) {
+  for (auto i : arr)
+    cout << i << endl;
 }
 
 int get_max(int a, int* b)
