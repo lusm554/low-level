@@ -9,6 +9,11 @@ using namespace std;
 inline bool isShorter(const string &s1, const string &s2);
 void rprint(vector<int> &vec, int i);
 
+void f();
+void f(int);
+void f(int, int);
+void f(double, double);
+
 int main()
 {
   /*
@@ -21,10 +26,18 @@ int main()
 	cout << "s1 is horter?" << " " << (isShorter(s1, s2) ? "True." : "False.") << endl;
   */
 
+  /*
   // recursive print
   vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 7, 9, 10};
   size_t index = vec.size() - 1;
   rprint(vec, index);
+  */
+
+  f();
+  f(10);
+  f(10, 10);
+  f(.0, .0);
+  //f(.0, 0); // error: call to 'f' is ambiguous
 
   return 0;
 }
@@ -50,4 +63,21 @@ void rprint(vector<int> &vec, int i)
   rprint(vec, i - 1);
   cout << vec[i] << endl;
 }
+
+void f() {
+  cout << "f()" << endl;
+} 
+
+void f(int) {
+  cout << "f(int)" << endl;
+}
+
+void f(int, int) {
+  cout << "f(int, int)" << endl;
+}
+
+void f(double, double) {
+  cout << "f(double, double)" << endl;
+}
+
 
