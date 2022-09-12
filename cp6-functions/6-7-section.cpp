@@ -41,23 +41,23 @@ int funcT(int a, int b)
   return a + b;
 }
 
-int add(int a, int b)
+inline int add(int a, int b)
 {
   return a + b;
 }
 
-int sub(int a, int b)
+inline int sub(int a, int b)
 {
   return a - b;
 }
 
-int mult(int a, int b)
+inline int mult(int a, int b)
 {
   return a * b;
 }
 
 // using _ for don't overload built in div func
-int _div(int a, int b)
+inline int _div(int a, int b)
 {
   return a / b;
 }
