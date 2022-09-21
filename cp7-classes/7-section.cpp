@@ -33,10 +33,16 @@ int main()
 {
   //sales_data_test();
   
-  use_struct_members();
+  //use_struct_members();
 
   return 0;
 }
+
+class Person
+{
+  string name;
+  string address;
+};
 
 void use_struct_members()
 {
