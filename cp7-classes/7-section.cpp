@@ -4,6 +4,7 @@
 using namespace std;
 
 void sales_data_test();
+void use_struct_members();
 
 struct Sales_data
 {
@@ -32,10 +33,36 @@ int main()
 {
   //sales_data_test();
   
+  use_struct_members();
+
   return 0;
 }
 
-
+void use_struct_members()
+{
+  Sales_data total;
+  if (cin >> total.bookNo >> total.units_sold >> total.revenue)
+  {
+    Sales_data trans;
+    while (cin >> trans.bookNo >> trans.units_sold >> trans.revenue)
+    {
+      if (total.bookNo == trans.bookNo)
+      {
+        total.combine(trans);
+      }
+      else
+      {
+        cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
+        total = trans;
+      }
+    }
+    cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
+  }
+  else
+  {
+    cerr << "NO DATA!" << endl;
+  }
+}
 
 void sales_data_test()
 {
@@ -63,5 +90,4 @@ void sales_data_test()
     cerr << "Where data?!" << endl;
   }
 }
-
 
