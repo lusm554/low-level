@@ -29,20 +29,39 @@ double Sales_data::avg_price() const
   return units_sold == 0 ? 0 : revenue / units_sold;
 }
 
+class Person
+{
+  // Define functions as const because
+  // they don't modify the class member's value
+  public:
+    string get_name() const
+    {
+      return _name;
+    }
+
+    string get_address() const
+    {
+      return _address;
+    }
+
+  private:
+    string _name;
+    string _address;
+};
+
 int main()
 {
   //sales_data_test();
   
   //use_struct_members();
 
+  Person p1;
+
+  cout << p1.get_name() << endl; // empty ((
+
   return 0;
 }
 
-class Person
-{
-  string name;
-  string address;
-};
 
 void use_struct_members()
 {
