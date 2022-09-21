@@ -3,6 +3,8 @@
 
 using namespace std;
 
+void sales_data_test();
+
 struct Sales_data
 {
   string bookNo;
@@ -11,6 +13,13 @@ struct Sales_data
 };
 
 int main()
+{
+  sales_data_test();
+  
+  return 0;
+}
+
+void sales_data_test()
 {
   Sales_data total;
   if (cin >> total.bookNo >> total.units_sold >> total.revenue)
@@ -34,9 +43,5 @@ int main()
   else
   {
     cerr << "Where data?!" << endl;
-    return -1;
   }
-  return 0;
 }
-
-
