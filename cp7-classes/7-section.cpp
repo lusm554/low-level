@@ -7,6 +7,9 @@ void sales_data_test();
 
 struct Sales_data
 {
+  string isbn() const { return bookNo; } 
+  Sales_data& combine(const Sales_data &rhs);
+
   string bookNo;
   unsigned units_sold = 0;
   double revenue = .0;
@@ -14,9 +17,16 @@ struct Sales_data
 
 int main()
 {
-  sales_data_test();
+  //sales_data_test();
   
   return 0;
+}
+
+Sales_data& Sales_data::combine(const Sales_data &rhs)
+{
+  units_sold += rhs.units_sold;
+  revenue += rhs.revenue;
+  return *this;
 }
 
 void sales_data_test()
@@ -45,3 +55,5 @@ void sales_data_test()
     cerr << "Where data?!" << endl;
   }
 }
+
+
