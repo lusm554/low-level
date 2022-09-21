@@ -9,11 +9,24 @@ struct Sales_data
 {
   string isbn() const { return bookNo; } 
   Sales_data& combine(const Sales_data &rhs);
+  double avg_price() const;
 
   string bookNo;
   unsigned units_sold = 0;
   double revenue = .0;
 };
+
+Sales_data& Sales_data::combine(const Sales_data &rhs)
+{
+  units_sold += rhs.units_sold;
+  revenue += rhs.revenue;
+  return *this;
+}
+
+double Sales_data::avg_price() const
+{
+  return units_sold == 0 ? 0 : revenue / units_sold;
+}
 
 int main()
 {
@@ -22,12 +35,7 @@ int main()
   return 0;
 }
 
-Sales_data& Sales_data::combine(const Sales_data &rhs)
-{
-  units_sold += rhs.units_sold;
-  revenue += rhs.revenue;
-  return *this;
-}
+
 
 void sales_data_test()
 {
