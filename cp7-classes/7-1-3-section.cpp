@@ -50,17 +50,40 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs)
 	return sum;
 }
 
+void trans_proc_w_rpa();
+
 int main()
+{
+	trans_proc_w_rpa();
+
+  return 0;
+}
+
+// rpa - read print add
+void trans_proc_w_rpa()
 {
 	Sales_data total;
 
-	if (read(cin, total)) {
+	if (read(cin, total))	
+	{
 		Sales_data curr;
 		while(read(cin, curr))
-			total = add(total, curr);
+		{
+			if (total.isbn() == curr.isbn())
+			{
+				total.combine(curr);
+			}
+			else
+			{
+				print(cout, total);
+				total = curr;
+			}
+		}
 		print(cout, total);
 	}
-
-  return 0;
+	else
+	{
+		cout << "Where is data??" << endl;
+	}
 }
 
