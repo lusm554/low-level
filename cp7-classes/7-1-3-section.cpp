@@ -3,6 +3,37 @@
 
 using namespace std;
 
+class Person
+{
+  // Define functions as const because
+  // they don't modify the class member's value
+  public:
+    string get_name() const
+    {
+      return _name;
+    }
+
+    string get_address() const
+    {
+      return _address;
+    }
+
+    string _name;
+    string _address;
+};
+
+istream &Read(istream &is, Person &obj)
+{
+	is >> obj._name >> obj._address;
+	return is;
+}
+
+ostream &Print(ostream &os, Person &obj)
+{
+	os << obj.get_name() << ' ' << obj.get_address() << endl;
+	return os;
+}
+
 struct Sales_data
 {
   string isbn() const { return bookNo; } 
@@ -54,7 +85,10 @@ void trans_proc_w_rpa();
 
 int main()
 {
-	trans_proc_w_rpa();
+	//trans_proc_w_rpa();
+	Person p;
+	Read(cin, p);
+	Print(cout, p);
 
   return 0;
 }
