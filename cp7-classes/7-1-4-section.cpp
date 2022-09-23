@@ -8,13 +8,19 @@ using std::string;
 using std::istream;
 using std::ostream;
 
+struct Sales_data;
+istream& read(istream &is, Sales_data& item);
+
 struct Sales_data
 {
     Sales_data() = default; // default initializer
     Sales_data(const string &str) : bookNo(str) {}
     Sales_data(const string &str, unsigned n, double p) :
         bookNo(str), units_sold(n), revenue(p * n) {}
-    Sales_data(istream &);
+    Sales_data(istream &is)
+    {
+        read(is, *this);
+    }
 
     string isbn() { return bookNo; }
     Sales_data &combine(const Sales_data &rhs);
@@ -52,10 +58,10 @@ ostream &print(ostream &os, Sales_data &item)
     return os;
 }
 
-Sales_data::Sales_data(istream &is)
-{
-    read(is, *this);
-}
+// Sales_data::Sales_data(istream &is)
+// {
+//     read(is, *this);
+// }
 
 int main()
 {
