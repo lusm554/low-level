@@ -13,7 +13,8 @@ istream& read(istream &is, Sales_data& item);
 
 struct Sales_data
 {
-    Sales_data() = default; // default initializer
+    //Sales_data() = default; // default initializer
+    Sales_data() : units_sold(0), revenue(.0) {}
     Sales_data(const string &str) : bookNo(str) {}
     Sales_data(const string &str, unsigned n, double p) :
         bookNo(str), units_sold(n), revenue(p * n) {}
