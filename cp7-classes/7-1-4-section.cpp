@@ -63,8 +63,11 @@ ostream &print(ostream &os, Sales_data &item)
 //     read(is, *this);
 // }
 
+void use_is_constructor();
+
 int main()
 {
+    /*
     Sales_data obj1; // default init
     Sales_data obj2("mybooknumber"); // init only bookNo, other inits by default
     Sales_data obj3("mbn", 71, 5.2); // init all members
@@ -74,6 +77,35 @@ int main()
     print(cout, obj2);
     print(cout, obj3);
     print(cout, obj4);
+    */
+
+   use_is_constructor();
 
     return 0;
+}
+
+void use_is_constructor()
+{
+    Sales_data total(cin);
+    if (total.bookNo.empty() == false)
+    {
+        while (cin)
+        {
+            Sales_data trans(cin);
+            if (total.bookNo == trans.bookNo)
+            {
+                total.combine(trans);
+            }
+            else
+            {
+                print(cout, total);
+                total = trans;
+            }
+        }
+        print(cout, total);
+    }
+    else
+    {
+        cout << "No data :(" << endl;
+    }
 }
