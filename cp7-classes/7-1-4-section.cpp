@@ -150,3 +150,4 @@ void use_is_constructor()
         cout << "No data :(" << endl;
     }
 }
+
