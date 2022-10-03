@@ -6,11 +6,57 @@ using std::cout;
 using std::string;
 using std::istream;
 using std::ostream;
+using std::endl;
+
+void test_sales_data(void);
 
 class Sales_data;
 istream& read(istream &, Sales_data &);
 ostream& print(ostream &, const Sales_data &);
 Sales_data add(const Sales_data &, const Sales_data &);
+
+class Person;
+istream& Read(istream &, Person &);
+ostream& Print(ostream &, const Person &);
+
+class Person
+{
+    friend istream& Read(istream &, Person &);
+    friend ostream& Print(ostream &, const Person &);
+
+    public:
+        Person() = default;
+        Person(const string name, const string address) :
+            _name(name), _address(address) { }
+        Person(istream &is)
+        {
+            Read(is, *this);
+        }
+
+        string get_name() const
+        {
+            return _name;
+        }
+        string get_address() const
+        {
+            return _address;
+        }
+    private:
+        string _name;
+        string _address;
+};
+
+istream& Read(istream &is, Person &obj)
+{
+    is >> obj._name >> obj._address;
+    return is;
+}
+
+ostream& Print(ostream &os, const Person &obj)
+{
+    os << obj._name << " " << obj._address << endl;
+    return os;
+}
 
 class Sales_data
 {
@@ -74,7 +120,17 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs)
 
 int main()
 {
-	Sales_data total(cin);
+    //test_sales_data();
+
+    Person pers(cin);
+
+    Print(cout, pers);
+	return 0;
+}
+
+void test_sales_data(void)
+{
+    Sales_data total(cin);
 	if(total.isbn().empty() == false)
 	{
 		while(cin)
@@ -95,7 +151,5 @@ int main()
 	else
 	{
 		cout << "No data?!" << '\n';
-		return -1;
 	}
-	return 0;
 }
