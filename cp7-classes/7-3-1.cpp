@@ -7,6 +7,7 @@ class Screen
     typedef std::string::size_type pos;
 
     Screen() = default;
+    Screen(post ht, post wd) : height(ht), width(wd), contents(ht * wd, ' ') {}
     Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c) {}
     char get() const
     {
