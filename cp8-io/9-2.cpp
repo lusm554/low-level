@@ -33,8 +33,9 @@ void wtf_container(void)
   }
 }
 
+typedef std::vector<int>::const_iterator iv_iter;
 
-bool in(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end, const int val)
+bool in(iv_iter begin, iv_iter end, const int val)
 {
   while (begin != end)
   {
@@ -46,10 +47,22 @@ bool in(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator
   return false;
 } 
 
+iv_iter get(iv_iter begin, iv_iter end, const int val)
+{
+  while (begin != end)
+  {
+    if (*begin == val)
+     return begin; 
+    ++begin;
+  }
+
+  return end;
+}
+
 int main(void)
 {
   //wtf_container();
-  
+
   std::vector<int> iv = {1, 2, 3, 4};
 
   bool res = in(iv.cbegin(), iv.cend(), 4);
@@ -57,6 +70,13 @@ int main(void)
 
   res = in(iv.cbegin(), iv.cend(), 6);
   std::cout << (res ? "true" : "false") << std::endl;
+
+  iv_iter ires = get(iv.cbegin(), iv.cend(), 4);
+  if(ires != iv.end())
+    std::cout << "int position " << ires - iv.cbegin() << std::endl;
+  else
+    std::cout << "int not found" << std::endl;
+ 
 
   return 0;
 }
