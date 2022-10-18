@@ -1,9 +1,9 @@
 #include <iostream>
+#include <vector>
 #include <list>
 #include <deque>
 
-
-int main(void)
+void wtf_container(void)
 {
   std::list<std::deque<int>> wtf;
 
@@ -31,6 +31,32 @@ int main(void)
     }
     std::cout << std::endl;
   }
+}
+
+
+bool in(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end, const int val)
+{
+  while (begin != end)
+  {
+    if (*begin == val)
+      return true;
+    ++begin;
+  }
+
+  return false;
+} 
+
+int main(void)
+{
+  //wtf_container();
+  
+  std::vector<int> iv = {1, 2, 3, 4};
+
+  bool res = in(iv.cbegin(), iv.cend(), 4);
+  std::cout << (res ? "true" : "false") << std::endl;
+
+  res = in(iv.cbegin(), iv.cend(), 6);
+  std::cout << (res ? "true" : "false") << std::endl;
 
   return 0;
 }
